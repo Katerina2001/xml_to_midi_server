@@ -1,50 +1,53 @@
 # XML to MIDI Server
 
-Αυτός ο server μετατρέπει αρχεία **MusicXML** σε **MIDI**, επιτρέποντας την αναγνώριση και αναπαραγωγή μουσικών σημειώσεων μέσω του **Audiveris**.
+This server converts **MusicXML** files to **MIDI**, enabling recognition and playback of musical notes using **Audiveris**.
 
-## Οδηγίες εγκατάστασης
+## Installation Instructions
 
-### 1. Κλωνοποίηση του αποθετηρίου
-
+### 1. Clone the Repository
+```sh
 git clone https://github.com/Katerina2001/xml_to_midi_server.git
 cd xml_to_midi_server
+```
 
-### 2. Εγκατάσταση του **Audiveris**
-Το Audiveris πρέπει να εγκατασταθεί χειροκίνητα.  
-Κατεβάστε το από το **[επίσημο αποθετήριο στο GitHub](https://github.com/Audiveris/audiveris)** και ακολουθήστε τις οδηγίες εγκατάστασης.
+### 2. Install **Audiveris**
+Audiveris must be installed manually.  
+Download it from the **[official GitHub repository](https://github.com/Audiveris/audiveris)** and follow the installation instructions.
 
-Μετά την εγκατάσταση, βεβαιωθείτε ότι το **Audiveris.jar** βρίσκεται στη σωστή διαδρομή και ότι το **Java** είναι εγκατεστημένο.
+After installation, ensure that **Audiveris.jar** is in the correct path and that **Java** is installed.
 
-### 3. Δημιουργία και ενεργοποίηση **virtual environment** (προαιρετικό)
-
+### 3. Create and Activate a **Virtual Environment** (Optional)
+```sh
 python -m venv venv
-source venv/bin/activate  # Για Linux/macOS
-venv\Scripts\activate     # Για Windows
+source venv/bin/activate  # For Linux/macOS
+venv\Scripts\activate     # For Windows
+```
 
-### 4. Εγκατάσταση εξαρτήσεων
-
+### 4. Install Dependencies
+```sh
 pip install -r requirements.txt
+```
 
-## Τρόπος εκτέλεσης
-
+## Running the Server
+```sh
 python app.py
-
-Ο server θα τρέξει στη διεύθυνση:  
+```
+The server will run at:  
 🌍 **http://127.0.0.1:5000/**
 
-## Απαιτούμενα Dependencies
-Το αρχείο `requirements.txt` περιλαμβάνει:
-
+## Required Dependencies
+The `requirements.txt` file includes:
+```
 Flask
 Werkzeug
 pydub
 requests
-
-Επιπλέον, θα χρειαστείτε:
-- **Java (JDK 11 ή νεότερο)**
+```
+Additionally, you will need:
+- **Java (JDK 11 or later)**
 - **Audiveris 5.3+**
 
-## Τεχνολογίες
+## Technologies Used
 - **Python**
 - **Flask**
 - **Audiveris**
@@ -52,11 +55,11 @@ requests
 
 ## API Endpoints
 
-| Μέθοδος | Διαδρομή | Περιγραφή |
+| Method | Endpoint | Description |
 |----------|---------|------------|
-| `POST` | `/convert` | Αποστολή XML και λήψη MIDI |
-| `GET`  | `/status` | Έλεγχος αν ο server είναι ενεργός |
+| `POST` | `/convert` | Send XML and receive MIDI |
+| `GET`  | `/status` | Check if the server is running |
 
-## Σημειώσεις
-Αν υπάρχει πρόβλημα με το `Audiveris`, ελέγξτε το `audiveris_error.log`.
+## Notes
+If you encounter issues with `Audiveris`, check `audiveris_error.log`.
 
