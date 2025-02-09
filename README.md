@@ -29,6 +29,9 @@ pip install -r requirements.txt
 ```
 
 ## Running the Server
+
+Please modify the app.py file and update the path to audiveris to your installation path.
+
 ```sh
 python app.py
 ```
