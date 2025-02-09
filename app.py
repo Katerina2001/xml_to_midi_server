@@ -9,7 +9,7 @@ CORS(app)  # Allow communication from Flutter
 # Folder settings
 UPLOAD_FOLDER = 'uploads'
 OUTPUT_FOLDER = 'outputs'
-AUDIVERIS_DIR = 'C:/Users/alexi/audiveris/build'  # Audiveris folder
+AUDIVERIS_DIR = 'your/path/to/audiveris/build'  # UPDATE WITH YOUR PATH
 
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
